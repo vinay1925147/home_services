@@ -1,43 +1,152 @@
-import React from 'react'
-import { assets } from '../assets/assets'
+import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import logo from "../assets/serv-smaert-images/home.png";
+
+import { FaInstagram } from "react-icons/fa";
+import { CiFacebook } from "react-icons/ci";
+import { FaLinkedin } from "react-icons/fa6";
 
 const Footer = () => {
+  const { pathname } = useLocation();
+
+  // Scroll top on route change
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [pathname]);
+
   return (
-    <div className='md:mx-10'>
-      <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10  mt-40 text-sm'>
+    <footer className="bg-gray-50 border-t mt-24">
+      <div className="px-4 sm:px-8 md:px-12 lg:px-20 py-14">
 
-        <div>
-          <img className='mb-5 w-40' src={assets.logo} alt="" />
-          <p className='w-full md:w-2/3 text-gray-600 leading-6'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        {/* Main Footer */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+
+          {/* Left */}
+          <div>
+            <div className="flex items-center gap-3 mb-5">
+              <img className="w-14 h-14 object-contain" src={logo} alt="logo" />
+              <h2 className="text-2xl font-bold text-gray-800">
+                Serv<span className="text-primary">Smart</span>
+              </h2>
+            </div>
+
+            <p className="text-gray-600 leading-7 text-sm">
+              Our platform helps service providers grow their business digitally.
+              We connect skilled professionals with customers through secure
+              bookings, better visibility, and easy service management tools.
+            </p>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h3 className="text-xl font-semibold text-gray-800 mb-5">
+              COMPANY
+            </h3>
+
+            <ul className="space-y-3 text-gray-600 text-sm">
+
+              <li>
+                <Link to="/" className="hover:text-primary transition">
+                  Home
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/providers" className="hover:text-primary transition">
+                  Services
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/about" className="hover:text-primary transition">
+                  About Us
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/about"
+                  className="hover:text-primary transition"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+               <li>
+                <Link
+                  to="http://localhost:5174"
+                  className="hover:text-primary transition"
+                >
+                  Admin Panel
+                </Link>
+              </li>
+
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="text-xl font-semibold text-gray-800 mb-5">
+              GET IN TOUCH
+            </h3>
+
+            <ul className="space-y-3 text-gray-600 text-sm leading-6">
+              <li>📞 +91 9770096768</li>
+              <li>📧 vinayasati90@gmail.com</li>
+              <li>
+                📍 Durga Nagar, Near SATI Campus,
+                <br />
+                Vidisha (M.P.)
+              </li>
+            </ul>
+
+            {/* Social */}
+            <div className="flex gap-4 mt-6">
+
+              <a
+                href="https://www.instagram.com/a_s_a_t_i_j_i_90/"
+                target="_blank"
+                rel="noreferrer"
+                className="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center text-xl hover:bg-primary hover:text-white transition"
+              >
+                <FaInstagram />
+              </a>
+
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center text-2xl hover:bg-primary hover:text-white transition"
+              >
+                <CiFacebook />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/vinay-asati-912527248/"
+                target="_blank"
+                rel="noreferrer"
+                className="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center text-xl hover:bg-primary hover:text-white transition"
+              >
+                <FaLinkedin />
+              </a>
+
+            </div>
+          </div>
         </div>
 
-        <div>
-          <p className='text-xl font-medium mb-5'>COMPANY</p>
-          <ul className='flex flex-col gap-2 text-gray-600'>
-            <li>Home</li>
-            <li>About us</li>
-            <li>Delivery</li>
-            <li>Privacy policy</li>
-          </ul>
+        {/* Bottom */}
+        <div className="mt-12 border-t pt-6">
+          <p className="text-center text-sm text-gray-500">
+            Copyright © 2026{" "}
+            <span className="font-semibold">ServSmart.com</span> - All Rights
+            Reserved.
+          </p>
         </div>
-
-        <div>
-          <p className='text-xl font-medium mb-5'>GET IN TOUCH</p>
-          <ul className='flex flex-col gap-2 text-gray-600'>
-            <li>+1-212-456-7890</li>
-            <li>greatstackdev@gmail.com</li>
-          </ul>
-        </div>
-
       </div>
+    </footer>
+  );
+};
 
-      <div>
-        <hr />
-        <p className='py-5 text-sm text-center'>Copyright 2024 @ Prescripto.com - All Right Reserved.</p>
-      </div>
-
-    </div>
-  )
-}
-
-export default Footer
+export default Footer;
