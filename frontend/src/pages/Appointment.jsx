@@ -10,6 +10,7 @@ const Appointment = () => {
 
     const { docId } = useParams()
     const { doctors, currencySymbol, backendUrl, token, getDoctosData } = useContext(AppContext)
+    console.log(token)
     const daysOfWeek = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
 
     const [docInfo, setDocInfo] = useState(false)
@@ -86,7 +87,7 @@ const Appointment = () => {
     }
 
     const bookAppointment = async () => {
-
+      
         if (!token) {
             toast.warning('Login to book appointment')
             return navigate('/login')

@@ -16,11 +16,12 @@ const AdminContextProvider = (props) => {
     const [dashData, setDashData] = useState(false)
 
     // Getting all Doctors data from Database using API
-    const getAllDoctors = async () => {
+    const getAllDoctors = async () =>  {
 
         try {
 
             const { data } = await axios.get(backendUrl + '/api/admin/all-doctors', { headers: { aToken } })
+            console.log(data);
             if (data.success) {
                 setDoctors(data.doctors)
             } else {
