@@ -4,7 +4,8 @@ A full-stack Home Services platform built using the MERN stack. This project hel
 
 ---
 ## Team Members
-Vaibhav Sourvanshi
+Vaibhav Suryavanshi
+
 Samyak Jain
 ## 🚀 Features
 
@@ -35,8 +36,8 @@ Samyak Jain
 - MongoDB Atlas
 
 ### Deployment
-- Frontend:Vercel
-- Backend: Render
+- Frontend:Vercel(https://homeservices-theta.vercel.app/)
+- Backend: Render(https://home-services-backend-7zx7.onrender.com)
 
 ---
 
