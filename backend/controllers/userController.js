@@ -178,6 +178,7 @@ const bookAppointment = async (req, res) => {
     res.json({ success: true, message: "Appointment Booked" });
   } catch (error) {
     console.log(error);
+    console.log(error.message)
     res.json({ success: false, message: error.message });
   }
 };
@@ -233,7 +234,6 @@ const razorpayInstance = new razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,
   key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
-console.log(process.env.RAZORPAY_KEY_ID, process.env.RAZORPAY_KEY_SECRET);
 
 // API to make payment of appointment using razorpay
 const paymentRazorpay = async (req, res) => {
