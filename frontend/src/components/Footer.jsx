@@ -76,7 +76,7 @@ const Footer = () => {
               </li>
                <li>
                 <Link
-                  to="http://localhost:5174"
+                  to="https://home-services-xpiv.vercel.app/"
                   className="hover:text-primary transition"
                 >
                   Admin Panel
