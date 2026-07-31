@@ -19,9 +19,7 @@ const Login = () => {
     event.preventDefault();
 
     if (state === 'Sign Up') {
-
       const { data } = await axios.post(backendUrl + '/api/user/register', { name, email, password })
-
       if (data.success) {
         localStorage.setItem('token', data.token)
         setToken(data.token)
